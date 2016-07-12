@@ -16,6 +16,7 @@ mongoose.connect('mongodb://localhost/');
 var db = mongoose.connection;
 
 app.get('/api/gifs', function(request, res) {
+  console.log(request);
   Gifs.getGifs(function(err, gifs) {
     if (err) {
       console.log('Unable to find gifs in server/app.js')
@@ -37,3 +38,5 @@ app.post('/api/gifs', function(request, res) {
 
 app.listen(4000);
 console.log('app is running on port 4000');
+
+// module.exports = app;
