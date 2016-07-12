@@ -5,8 +5,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 var mongoose = require('mongoose');
-// app.use(express.static(_dirname+'/client'));
-
+app.use(express.static(__dirname+'/../client'));
+console.log(__dirname+'../client')
 // app.get()
 
 Gifs = require('./models/gifModel');
@@ -15,10 +15,6 @@ mongoose.connect('mongodb://localhost/');
 
 var db = mongoose.connection;
 
-app.get('/', function(request, res) {
-  res.send('hello');
-}
-)
 app.get('/api/gifs', function(request, res) {
   Gifs.getGifs(function(err, gifs) {
     if (err) {
