@@ -1,18 +1,37 @@
+
 <div class="panel panel-default">
   <div class="panel-heading">
     <h3 class="panel-title">GiffleBag</h3>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div ng-repeat="gif in gifs">
-        <div class="col-md-3">
-          <div class='col1=md-6'>
-            {{gif.tag}}
-          </div>
-          <div class='col1=md-6'>
-            <img src="{{gif.url }}">
-          </div>
-        </div>
-    </div>
-  </div>
 </div>
+<div class="input-group">
+     <input ng-model="searchText" type="text" class="form-control" placeholder="Search by #tags">
+     <span class="input-group-btn">
+       <button class="btn btn-default" type="button">Search</button>
+     </span>
+</div>
+    <div class="row">
+      <div ng-repeat="gif in gifs | orderBy: 'visits': true | filter:searchText">
+      <div class="col-xs-6 col-md-3">
+        <a href="#" class="thumbnail">
+          <img src="{{gif.url}}" alt="{{gif.tag}}" class="img-responsive">
+        </a>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+
+<!--
+<div class="row">
+
+    <div class="col-md-3">
+      <div class='col1=md-6'>
+        {{gif.tag}}
+      </div>
+      <div class='col1=md-6'>
+        <img src="{{gif.url }}">
+      </div>
+    </div>
+</div>
+</div> -->

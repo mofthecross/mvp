@@ -15,22 +15,8 @@ var GifSchema = new Schema({
 
 var Gifs = module.exports = mongoose.model('Gifs', GifSchema);
 
-var FakeGif = new Gifs({
-  url: "http://45.media.tumblr.com/114fdc227514c370dafff37f3940d19e/tumblr_nzibsxvoRP1un7fp4o1_500.gif",
-  // visits: 2,
-  // title: "title",
-  tag: "#raaaage'"
-})
-
-FakeGif.save(function(err, FakeGif) {
-  if (err) {
-    console.log(err)
-  }
-  console.dir(FakeGif);
-});
-
-//get Gifs
 module.exports.getGifs = function(callback, limit) {
+  // Gifs.collection.remove();
   Gifs.find(callback).limit(limit);
 }
 
