@@ -10,8 +10,8 @@ myApp.config(function($routeProvider) {
     templateUrl: 'views/gifs.html'
   })
   .when('/saveGif', {
-    controller: 'gifsController',
-    templateUrl: 'views/saveGif.html'
+    controller: 'saveGifController',
+    templateUrl:'views/saveGif.html'
   })
   .otherwise({
     redirectTo: '/'

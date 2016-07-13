@@ -16,10 +16,10 @@ var GifSchema = new Schema({
 var Gifs = module.exports = mongoose.model('Gifs', GifSchema);
 
 var FakeGif = new Gifs({
-  url: "http://www.gifbin.com/bin/082011/1313398002_baby_falls_asleep.gif",
-  visits: 2,
-  title: "title",
-  tag: "#sleepy"
+  url: "http://45.media.tumblr.com/114fdc227514c370dafff37f3940d19e/tumblr_nzibsxvoRP1un7fp4o1_500.gif",
+  // visits: 2,
+  // title: "title",
+  tag: "#raaaage'"
 })
 
 FakeGif.save(function(err, FakeGif) {
@@ -34,7 +34,21 @@ module.exports.getGifs = function(callback, limit) {
   Gifs.find(callback).limit(limit);
 }
 
+// module.exports.emptyGifs = function(callback) {
+// }
+
 //add Gif
-module.exports.saveGif  = function(gifObject, callback) {
-  Gifs.create(gifObject, callback);
+module.exports.saveGif = function(gifObject, callback) {
+  console.log('fuck', gifObject)
+  var newGif = new Gifs({
+    url: gifObject.url,
+    tag: gifObject.tag
+  });
+
+  newGif.save(function(err, newGif) {
+    if (err) {
+      console.log(err)
+    }
+    console.dir(newGif);
+  })
 }

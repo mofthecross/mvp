@@ -16,7 +16,7 @@ mongoose.connect('mongodb://localhost/');
 var db = mongoose.connection;
 
 app.get('/api/gifs', function(request, res) {
-  console.log(request);
+  
   Gifs.getGifs(function(err, gifs) {
     if (err) {
       console.log('Unable to find gifs in server/app.js')
@@ -26,14 +26,14 @@ app.get('/api/gifs', function(request, res) {
 });
 
 app.post('/api/gifs', function(request, res) {
-  var newGif = request.body;
-
+  var newGif = request.body
+  console.log('comeon', newGif)
   Gifs.saveGif(newGif, function(error, newGif){
     if (error) {
       console.log('Unable to save newGif')
     }
     res.json(newGif);
-    } )
+    })
 });
 
 app.listen(4000);
