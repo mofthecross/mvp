@@ -1,4 +1,4 @@
-<form ng-submit = "saveGif()">
+<form ng-submit = "Submit()">
   <div class="form-group">
     <label>Gif</label>
     <input type="gif url" class="form-control" ng-model="gif.url" placeholder="enter gif url here">
@@ -7,11 +7,11 @@
     <label>Describe this gif</label>
     <input type="hashtag" class="form-control" ng-model="gif.tag" placeholder="#funny, #laugh">
   </div>
-  <!-- <div class="form-group">
+  <div class="form-group">
     <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
+    <input type="file" class="form-control" file-model="gif.file" placeholder="enter gif url here">
     <p class="help-block">Example block-level help text here.</p>
-  </div> -->
+  </div>
   <!-- <div class="checkbox">
     <label>
       <input type="checkbox"> Check me out

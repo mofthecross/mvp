@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('saveGifController', function($scope, $window, $location, $http, $routeParams) {
+.controller('saveGifController', function($scope, uploadForm , $window, $location, $http, $routeParams) {
   $scope.gif = {}
   $scope.saveGif = function() {
 
@@ -8,5 +8,9 @@ angular.module('myApp')
         window.location.href='#/gifs'
       });
     }
+  $scope.Submit = function() {
+     var uploadUrl = '/upload';
+     uploadForm.post(uploadUrl, $scope.gif)
+  }
 
   });
