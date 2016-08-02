@@ -25,7 +25,6 @@ module.exports.getGifs = function(callback, limit) {
 
 //add Gif
 module.exports.saveGif = function(gifObject, callback) {
-  console.log('fuck', gifObject)
   var newGif = new Gifs({
     url: gifObject.url,
     tag: gifObject.tag
