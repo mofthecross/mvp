@@ -1,2 +1,3 @@
 #mvp
-This is a project I completed as a student at [hackreactor](http://hackreactor.com). This project was worked on with a pair.
+>GIF recorder and searching tool where users can find and store .gif files that best capture their range of online emotions.
+>Built using the MEAN (MongoDB, Express, Angular and Node) Stack.
